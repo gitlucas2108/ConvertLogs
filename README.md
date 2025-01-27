@@ -48,7 +48,10 @@ ResponseSize	int	Tamanho da resposta em bytes
 CacheStatus	string	Status do cache (HIT/MISS/etc.)
 ---
 📌 Endpoints da API
-1️⃣ Buscar todos os logs salvos ("MINHA CDN"): GET /api/logs
+1️⃣ Buscar todos os logs salvos ("MINHA CDN"): 
+
+GET /api/logs
+
 Resposta Exemplo
 [
   {
@@ -62,7 +65,10 @@ Resposta Exemplo
   }
 ]
 ---
-2️⃣ Buscar um log pelo ID ("MINHA CDN"):GET /api/logs/{id}
+2️⃣ Buscar um log pelo ID ("MINHA CDN"):
+
+GET /api/logs/{id}
+
 Resposta Exemplo
 {
   "id": 1,
@@ -74,7 +80,10 @@ Resposta Exemplo
   "cacheStatus": "HIT"
 }
 ---
-3️⃣ Salvar um log no formato "MINHA CDN": POST /api/logs
+3️⃣ Salvar um log no formato "MINHA CDN": 
+
+POST /api/logs
+
 Body Exemplo
 {
   "httpMethod": "GET",
@@ -95,7 +104,10 @@ Resposta Exemplo
   "cacheStatus": "HIT"
 }
 ---
-4️⃣ Buscar um log transformado pelo ID ("Agora"): GET /api/logs/transform/{id}
+4️⃣ Buscar um log transformado pelo ID ("Agora"): 
+
+GET /api/logs/transform/{id}
+
 Resposta Exemplo
 {
   "httpMethod": "GET",
@@ -107,7 +119,10 @@ Resposta Exemplo
   "provider": "MINHA CDN"
 }
 ---
-5️⃣ Buscar todos os logs transformados: GET /api/logs/transformed
+5️⃣ Buscar todos os logs transformados: 
+
+GET /api/logs/transformed
+
 Resposta Exemplo
 {
   "LogsOrigem": [
@@ -134,7 +149,10 @@ Resposta Exemplo
   ]
 }
 ---
-6️⃣ Converter um log e salvar em um arquivo: POST /api/logs/transform
+6️⃣ Converter um log e salvar em um arquivo: 
+
+POST /api/logs/transform
+
 Body Exemplo
 {
   "httpMethod": "GET",
@@ -160,8 +178,11 @@ Resposta Exemplo
 
 ---
 ✅ Executando os Testes Automatizados
+
 1️⃣ Rodar todos os testes
+
   dotnet test ConvertLogs.Tests
+  
 ---
 2️⃣ Testes Implementados
 ✅ SaveLog_ReturnsCreated_WhenLogIsValid
@@ -172,7 +193,9 @@ Resposta Exemplo
 ✅ GetTransformedLogById_Returns500_WhenExceptionOccurs
 ✅ TransformLog_ReturnsOk_WhenLogIsValid
 ✅ TransformLog_ReturnsBadRequest_WhenLogIsNull
+
 ---
+
 🏗️ Estrutura do Projeto
 ConvertLogs/
 │── ConvertLogs.API/            # API principal
@@ -182,7 +205,9 @@ ConvertLogs/
 │── ConvertLogs.API/Controllers/ # Controladores da API
 │── ConvertLogs.Tests/          # Testes unitários e de integração
 │── README.md                   # Documentação do projeto
+
 ---
+
 📜 Licença
 Este projeto é open-source e está licenciado sob a MIT License.
 MIT License © 2025 ConvertLogs
