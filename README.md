@@ -21,7 +21,6 @@ ConvertLogs é uma API REST desenvolvida em **.NET Core 2.1** para conversão de
 - .NET Core 2.1 SDK
 
 **1️⃣ Clonando o Repositório**
-```sh
 git clone https://github.com/seu-usuario/ConvertLogs.git
 cd ConvertLogs
 
