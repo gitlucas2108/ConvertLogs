@@ -19,23 +19,23 @@ ConvertLogs é uma API REST desenvolvida em **.NET Core 2.1** para conversão de
 - Visual Studio 2019
 - SQL Server
 - .NET Core 2.1 SDK
-
+---
 **1️⃣ Clonando o Repositório**
 git clone https://github.com/seu-usuario/ConvertLogs.git
 cd ConvertLogs
-
+---
 2️⃣ Configurando a String de Conexão
 No arquivo appsettings.json, configure a string de conexão para o SQL Server:
 "ConnectionStrings": {
   "DefaultConnection": "Server=192.168.70.91;Database=ConvertLogsDB;User Id=convert;Password=convert@2025;"
 }
-
+---
 3️⃣ Executando a Aplicação
 dotnet run --project ConvertLogs.API
 
 A API estará rodando em:
 🔗 http://localhost:5000/api/logs
-
+---
 🗄️ Estrutura do Banco de Dados
 Tabela LogsOrigem (Formato "MINHA CDN")
 Campo	Tipo	Descrição
@@ -46,7 +46,7 @@ UriPath	string	Caminho do recurso acessado
 TimeTaken	double	Tempo de resposta da requisição
 ResponseSize	int	Tamanho da resposta em bytes
 CacheStatus	string	Status do cache (HIT/MISS/etc.)
-
+---
 📌 Endpoints da API
 1️⃣ Buscar todos os logs salvos ("MINHA CDN"): GET /api/logs
 Resposta Exemplo
@@ -61,7 +61,7 @@ Resposta Exemplo
     "cacheStatus": "HIT"
   }
 ]
-
+---
 2️⃣ Buscar um log pelo ID ("MINHA CDN"):GET /api/logs/{id}
 Resposta Exemplo
 {
@@ -73,7 +73,7 @@ Resposta Exemplo
   "responseSize": 100,
   "cacheStatus": "HIT"
 }
-
+---
 3️⃣ Salvar um log no formato "MINHA CDN": POST /api/logs
 Body Exemplo
 {
@@ -94,7 +94,7 @@ Resposta Exemplo
   "responseSize": 100,
   "cacheStatus": "HIT"
 }
-
+---
 4️⃣ Buscar um log transformado pelo ID ("Agora"): GET /api/logs/transform/{id}
 Resposta Exemplo
 {
@@ -106,13 +106,13 @@ Resposta Exemplo
   "cacheStatus": "MISS",
   "provider": "MINHA CDN"
 }
-
+---
 5️⃣ Buscar todos os logs transformados: GET /api/logs/transformed
 Resposta Exemplo
 {
   "LogsOrigem": [
-    {
-      "id": 1,
+{
+  "id": 1,
       "httpMethod": "GET",
       "statusCode": 200,
       "uriPath": "/robots.txt",
@@ -133,7 +133,7 @@ Resposta Exemplo
     }
   ]
 }
-
+---
 6️⃣ Converter um log e salvar em um arquivo: POST /api/logs/transform
 Body Exemplo
 {
@@ -158,11 +158,11 @@ Resposta Exemplo
   "filePath": "C:\\Logs\\logConvertido.txt"
 }
 
-
+---
 ✅ Executando os Testes Automatizados
 1️⃣ Rodar todos os testes
   dotnet test ConvertLogs.Tests
-
+---
 2️⃣ Testes Implementados
 ✅ SaveLog_ReturnsCreated_WhenLogIsValid
 ✅ SaveLog_ReturnsBadRequest_WhenLogIsNull
@@ -172,7 +172,7 @@ Resposta Exemplo
 ✅ GetTransformedLogById_Returns500_WhenExceptionOccurs
 ✅ TransformLog_ReturnsOk_WhenLogIsValid
 ✅ TransformLog_ReturnsBadRequest_WhenLogIsNull
-
+---
 🏗️ Estrutura do Projeto
 ConvertLogs/
 │── ConvertLogs.API/            # API principal
@@ -182,7 +182,7 @@ ConvertLogs/
 │── ConvertLogs.API/Controllers/ # Controladores da API
 │── ConvertLogs.Tests/          # Testes unitários e de integração
 │── README.md                   # Documentação do projeto
-
+---
 📜 Licença
 Este projeto é open-source e está licenciado sob a MIT License.
 MIT License © 2025 ConvertLogs
