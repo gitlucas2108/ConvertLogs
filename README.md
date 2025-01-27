@@ -1,8 +1,8 @@
-# ConvertLogs
+ConvertLogs
 
 ConvertLogs é uma API REST desenvolvida em **.NET Core 2.1** para conversão de logs do formato **"MINHA CDN"** para o formato **"Agora"**. Além disso, a API armazena logs no banco de dados e permite salvá-los em arquivos `.txt`.
 
-## 🚀 Tecnologias Utilizadas
+🚀 Tecnologias Utilizadas
 
 - **.NET Core 2.1**
 - **Entity Framework Core**
@@ -13,14 +13,14 @@ ConvertLogs é uma API REST desenvolvida em **.NET Core 2.1** para conversão de
 
 ---
 
-## 📥 Instalação e Execução
+📥 Instalação e Execução
 
-### **Pré-requisitos**
+**Pré-requisitos**
 - Visual Studio 2019
 - SQL Server
 - .NET Core 2.1 SDK
 
-### **1️⃣ Clonando o Repositório**
+**1️⃣ Clonando o Repositório**
 ```sh
 git clone https://github.com/seu-usuario/ConvertLogs.git
 cd ConvertLogs
